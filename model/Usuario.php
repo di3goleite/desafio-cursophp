@@ -1,62 +1,26 @@
 <?php
 
-namespace model;
+namespace Project\Model;
+
+include ../lib/Connection.php;
+
+use Project\Lib\Connection as DB;
+
+$db = new DB;
 
 class Usuario{
 
-	private $login;
-	private $senha;
+	protected $conn, $usuario, $senha;
 
-	protected $session;
-
-	public function __construct(Session $session = null)
+	public class __construct($usuario, $senha)
 	{
-		$this->session = $session;
+		$this->conn = $db->getDB();
+		$this->usuario = $usuario;
+		$this->senha = $senha;
 	}
 
-	private function getUsuarios()
+	public class userExist()
 	{
-		$usuarios[] = ['login' => 'login', 'senha' => 'login'];
-		$usuarios[] = ['login' => 'login2', 'senha' => 'login2'];
-		return $usuarios;
+
 	}
-
-	public function isExists($login, $senha)
-	{
-		$exists = false;
-		foreach($this->getUsuarios() as $usuario) 
-			if ($usuario === $usuario['login']
-					&& $senha === $usuario['senha'])
-			{
-				$exists = true;		
-				break;	
-			}			
-
-		return $exists;
-	}
-
-	public function isLogged()
-	{				
-		$session = $this->session->getSession();
-		return isset($session['login']) 
-			   || $session['login'] === '1';
-	}
-
-
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-?>
