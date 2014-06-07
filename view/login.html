@@ -1,30 +1,54 @@
 <html>
 <head>
 	<title>Página de Login</title>
-</head>
-<body bgcolor="darkpink">
-	<h1> Login ! </h1>
-	<p>Faça login e comente !</p>
-	<form action="Controller.php" method="GET">
-		<label>
-			Usuario:
-			<input type="text" name="usuario"/>
-		</label>
-		<br>
-		<label>
-			Senha:
-			<input type="password" name="senha"/>
-		</label>
-		<br>
-		<label>
-			<input type="submit" name="enviar" value="FAZER LOGIN!"/>	
-		</label>
-		<br>
-		<label>
-			E aqui vai uma homenagem pra sua página ficar mais legal (y)
-			<br>
-			<img src="https://scontent-a-ord.xx.fbcdn.net/hphotos-xfa1/t1.0-9/p417x417/1506463_668544839872525_1822140522_n.jpg"></img>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8" />
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <style type="text/css">
+      body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #f5f5f5;
+      }
 
-		</label>	
+      .form-signin {
+        max-width: 300px;
+        padding: 19px 29px 29px;
+        margin: 0 auto 20px;
+        background-color: #fff;
+        border: 1px solid #e5e5e5;
+        -webkit-border-radius: 5px;
+           -moz-border-radius: 5px;
+                border-radius: 5px;
+        -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+           -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+                box-shadow: 0 1px 2px rgba(0,0,0,.05);
+      }
+      .form-signin .form-signin-heading,
+      .form-signin .checkbox {
+        margin-bottom: 10px;
+      }
+      .form-signin input[type="text"],
+      .form-signin input[type="password"] {
+        font-size: 16px;
+        height: auto;
+        margin-bottom: 15px;
+        padding: 7px 9px;
+      }
+
+    </style>
+</head>
+<body>
+	<div class="container">
+		<form action="Controller.php" method="POST" class="form-signin">
+			<h2 class="form-signin-heading">Login</h2>
+			<input type="text" class="input-block-level" name="usuario" placeholder="Usuário"/>
+			<input type="password" class="input-block-level" name="senha" placeholder="Senha"/>
+			<input type="submit" class="btn btn-large btn-primary" name="enviar" value="Logar"/>	
+		</form>
+	</div>
+	<script src="http://code.jquery.com/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
