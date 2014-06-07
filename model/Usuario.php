@@ -7,7 +7,6 @@ class Usuario{
 	private $login;
 	private $senha;
 
-
 	protected $session;
 
 	public function __construct(Session $session = null)
